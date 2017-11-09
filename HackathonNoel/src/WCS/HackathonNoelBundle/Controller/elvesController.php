@@ -50,6 +50,16 @@ class elvesController extends Controller
         );
     }
 
+//    public function updateDone($id)
+//    {
+//        $repository = $this
+//            ->getDoctrine()
+//            ->getManager()
+//            ->getRepository(Gift::class);
+//
+//        $done = $repository->find($id->)
+//    }
+
 
 
 }

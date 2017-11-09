@@ -15,6 +15,7 @@ class Gift
     /**
      * @var
      * @ORM\ManyToOne(targetEntity="Child", inversedBy="gifts")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $child;
 

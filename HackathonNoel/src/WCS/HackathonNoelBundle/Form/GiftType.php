@@ -13,7 +13,7 @@ class GiftType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('done');
+        $builder->add('name');
     }
     
     /**

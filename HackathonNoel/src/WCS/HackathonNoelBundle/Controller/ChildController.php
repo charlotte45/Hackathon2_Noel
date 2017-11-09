@@ -45,6 +45,7 @@ class ChildController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // errors ?
             $em = $this->getDoctrine()->getManager();
             $em->persist($child);
             $em->flush();
