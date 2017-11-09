@@ -14,7 +14,7 @@ class Child
 {
     /**
      * @var
-     * @ORM\OneToMany(targetEntity="Gift", mappedBy="Child")
+     * @ORM\OneToMany(targetEntity="Gift", mappedBy="child")
      */
     private $gifts;
 
