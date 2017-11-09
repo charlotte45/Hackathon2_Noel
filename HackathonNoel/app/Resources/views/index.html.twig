@@ -1,13 +1,22 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Ma liste de cadeaux pour le papa noël</h1>
+    <h1>Mon adresse pour le Père Noël</h1>
+
+    {% if errors %}
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>Erreur !</strong> Ton adresse n'a pas été trouvée... renseignes un endroit avec une cheminée
+            accessible !
+        </div>
+    {% endif %}
 
     {{ form_start(form) }}
     {{ form_widget(form) }}
 
     <div>
-        <button type="submit"><span class="glyphicon glyphicon-gift"></span> Envoyer ma liste de cadeaux au père Noël"
+        <button type="submit"><span class="glyphicon glyphicon-gift"></span> Confirmer mon adresse et choisir mes
+            cadeaux
         </button>
     </div>
     {{ form_end(form) }}
