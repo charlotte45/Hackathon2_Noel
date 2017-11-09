@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Children list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Firstname</th>
+                <th>Address</th>
+                <th>Zipcode</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for child in children %}
+            <tr>
+                <td><a href="{{ path('child_show', { 'id': child.id }) }}">{{ child.id }}</a></td>
+                <td>{{ child.name }}</td>
+                <td>{{ child.firstname }}</td>
+                <td>{{ child.address }}</td>
+                <td>{{ child.zipcode }}</td>
+                <td>{{ child.city }}</td>
+                <td>{{ child.country }}</td>
+                <td>{{ child.longitude }}</td>
+                <td>{{ child.latitude }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('child_show', { 'id': child.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('child_edit', { 'id': child.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('child_new') }}">Create a new child</a>
+        </li>
+    </ul>
+{% endblock %}
