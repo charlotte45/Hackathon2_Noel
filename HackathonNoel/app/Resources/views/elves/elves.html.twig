@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container" >
+    <div class="container">
         <header>
             <p>COMPTEUR</p>
             <hr/>
@@ -15,12 +15,14 @@
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ loop.index }}" aria-expanded="true" aria-controls="collapseOne">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                   href="#collapse{{ loop.index }}" aria-expanded="true" aria-controls="collapseOne">
                                     {{ child.firstname }} {{ child.name }}
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapse{{ loop.index }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div id="collapse{{ loop.index }}" class="panel-collapse collapse" role="tabpanel"
+                             aria-labelledby="headingOne">
                             <div class="panel-body">
                                 {% for gift in child.gifts %}
                                     <div class="row">
@@ -28,10 +30,13 @@
                                             <p>{{ gift.name }}</p>
                                         </div>
                                         <div class="col-xs-4">
-                                            <form action="" method="post">
-                                                <input type="hidden" name="id" value="{{ gift.id }}"/>
-                                                <button type="submit" class="btn btn-default pull-right"></button>
-                                            </form>
+                                            <a href="{{ path('done', {'id': gift.id}) }}">
+                                                {% if gift.done %}
+                                                    <p class="done">Done</p>
+                                                {% else %}
+                                                    <p class="undone">Not done</p>
+                                                {% endif %}
+                                            </a>
                                         </div>
                                     </div>
 

@@ -25,7 +25,7 @@ class elvesController extends Controller
 {
     /**
      * @return \Symfony\Component\HttpFoundation\Response
-     * @Route("/")
+     * @Route("/", name="show_all")
      */
     public function showAll()
     {
@@ -50,16 +50,25 @@ class elvesController extends Controller
         );
     }
 
-//    public function updateDone($id)
-//    {
-//        $repository = $this
-//            ->getDoctrine()
-//            ->getManager()
-//            ->getRepository(Gift::class);
-//
-//        $done = $repository->find($id->)
-//    }
+    /**
+     * @param Request $id
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @Route("/updateDone/{id}", name="done")
+     */
+    public function doneAction(Gift $gift)
+    {
+        if ($gift->getDone() == false) {
+            $em = $this->getDoctrine()->getManager();
+            $gift->setDone(true);
+            $em->flush();
+        } else {
+            $em = $this->getDoctrine()->getManager();
+            $gift->setDone(false);
+            $em->flush();
+        }
 
 
+        return $this->redirectToRoute('show_all');
+    }
 
 }
