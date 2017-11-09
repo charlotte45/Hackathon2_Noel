@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% for child in children %}
+        {#{{ dump(child) }}#}
+        <ul>
+            <li>{{ child.name }}</li>
+            <li>{{ child.firstname }}</li>
+            <li>{{ child.address }}</li>
+            <li>{{ child.zipcode }}</li>
+            <li>{{ child.city }}</li>
+            <li>{{ child.country }}</li>
+        </ul>
+
+    {% endfor %}
+
+{% endblock %}
