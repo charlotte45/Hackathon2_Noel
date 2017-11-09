@@ -5,7 +5,8 @@ namespace WCS\HackathonNoelBundle\Controller;
 use WCS\HackathonNoelBundle\Entity\Child;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Child controller.
@@ -44,6 +45,7 @@ class ChildController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // errors ?
             $em = $this->getDoctrine()->getManager();
             $em->persist($child);
             $em->flush();

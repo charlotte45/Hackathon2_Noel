@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Ma liste de cadeaux pour le papa noël</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+
+    <div>
+        <button type="submit"><span class="glyphicon glyphicon-gift"></span> Envoyer ma liste de cadeaux au père Noël"
+        </button>
+    </div>
+    {{ form_end(form) }}
+
+{% endblock %}
