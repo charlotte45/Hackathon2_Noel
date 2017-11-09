@@ -99,5 +99,28 @@ class Gift
     {
         return $this->done;
     }
-}
 
+    /**
+     * Set child
+     *
+     * @param \WCS\HackathonNoelBundle\Entity\Child $child
+     *
+     * @return Gift
+     */
+    public function setChild(\WCS\HackathonNoelBundle\Entity\Child $child = null)
+    {
+        $this->child = $child;
+
+        return $this;
+    }
+
+    /**
+     * Get child
+     *
+     * @return \WCS\HackathonNoelBundle\Entity\Child
+     */
+    public function getChild()
+    {
+        return $this->child;
+    }
+}

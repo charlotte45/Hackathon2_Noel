@@ -1,12 +1,7 @@
-wcs_hackathon_noel_gift:
-    resource: "@WCSHackathonNoelBundle/Controller/GiftController.php"
-    type:     annotation
-
-wcs_hackathon_noel_child:
-    resource: "@WCSHackathonNoelBundle/Controller/ChildController.php"
-    type:     annotation
-
 wcs_hackathon_noel:
     resource: "@WCSHackathonNoelBundle/Resources/config/routing.yml"
     prefix:   /
 
+wcs_hackathon:
+    resource: "@WCSHackathonNoelBundle/Controller/"
+    type:     annotation

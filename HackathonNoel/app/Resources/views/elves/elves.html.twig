@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container" >
+        <header>
+            <p>COMPTEUR</p>
+            <hr/>
+            <p class="text-center">Vite, vite, vite ! Il vous reste encore {{ gifts|length }} jouets à fabriquer !</p>
+            <hr/>
+
+        </header>
+        <div class="row">
+            {% for child in children %}
+                <div class="col-xs-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ loop.index }}" aria-expanded="true" aria-controls="collapseOne">
+                                    {{ child.firstname }} {{ child.name }}
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse{{ loop.index }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                {% for gift in child.gifts %}
+                                    <div class="row">
+                                        <div class="col-xs-8">
+                                            <p>{{ gift.name }}</p>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <form action="" method="post">
+                                                <input type="hidden" name="id" value="{{ gift.id }}"/>
+                                                <button type="submit" class="btn btn-default pull-right"></button>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+{% endblock %}
