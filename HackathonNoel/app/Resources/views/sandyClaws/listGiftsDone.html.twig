@@ -44,7 +44,9 @@
         </div>
     </div>
 
-    <div id="map"></div>
+    <div class="container">
+        <div id="map"></div>
+    </div>
 
 {% endblock %}
 
@@ -55,15 +57,29 @@
     <script src="../../assets/countDown.js"></script>
     <script>
         function initMap() {
-            var uluru = {lat: -25.363, lng: 131.044};
+            var children = document.querySelectorAll('.child-list');
+
+            var pole = {lat: 85, lng: -12};
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 4,
-                center: uluru
+                center: pole
             });
             var marker = new google.maps.Marker({
-                position: uluru,
+                position: pole,
                 map: map
             });
+
+            for(var i=0; i<children.length ;i++) {
+                var child = children[i];
+                var child_lat = parseFloat(child.dataset.lat);
+                var child_lng = parseFloat(child.dataset.lng);
+                var childpos = {lat: child_lat, lng: child_lng};
+                var marker = new google.maps.Marker({
+                    position: childpos,
+                    map: map
+                });
+            }
+
         }
     </script>
 
