@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore');
+
 .done {
     color: green;
 }
@@ -23,16 +25,59 @@ body {
     background-color: #3f0000;
     opacity: 0.8;
     height: 100px;
-    margin-top: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+
 }
 
 .elves .message {
     color: white;
+    text-shadow: 6px 2px 7px #916319;
     font-size: calc(2vw + 10px);
     font-family: 'Kaushan Script', cursive;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     left: 50%;
+}
 
+.elves .message1 {
+    color: white;
+    font-size: calc(1vw + 10px);
+    font-family: 'Kaushan Script', cursive;
+    position: relative;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+
+.elves .panel-title {
+    font-size: calc(0.8vw + 10px);
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+}
+
+.elves .panel-heading {
+    background: url("../images/gold.jpg");
+    border-bottom: none;
+}
+
+.elves .panel-default {
+    border: none;
+}
+
+.elves a:focus, a:hover {
+    text-decoration: none;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.elves .panel-collapse > .panel-body {
+    border-top-color: transparent;
+    padding-left: 130px;
+}
+
+.elves .listGifts {
+    font-family: 'La Belle Aurore', cursive;
+    font-size: calc(1vw + 10px);
 }
