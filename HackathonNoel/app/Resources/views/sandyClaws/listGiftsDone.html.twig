@@ -24,6 +24,11 @@
                                     habite {{ child.address }} {{ child.zipcode }} {{ child.city|title }} {{ child.country|title }}
                                     voyons où j'ai rangé
                                     dans ma hotte!
+                                    <ol>
+                                    {% for gift in child.gifts %}
+                                        <li>{{ gift.name }}</li>
+                                    {% endfor %}
+                                    </ol>
                                 </li>
                             </ul>
                         {% endfor %}
