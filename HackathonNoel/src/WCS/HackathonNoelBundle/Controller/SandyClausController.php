@@ -23,12 +23,23 @@ class SandyClausController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $children = $em->getRepository('WCSHackathonNoelBundle:Child')->findAll();
-        $gifts = $em->getRepository('WCSHackathonNoelBundle:Gift')->findAll();
+        $childrenDone = [];
+        foreach ($children as $child) {
+            $noGiftDone = false;
+            foreach ($child->getGifts() as $gift) {
+                if (!$gift->getDone()) {
+                    $noGiftDone = true;
+                    break;
+                }
+            }
+            if (!$noGiftDone) {
+                $childrenDone[] = $child;
+            }
+        }
 
 
         return $this->render('sandyClaws/listGiftsDone.html.twig', array(
-            'children' => $children,
-            'gift'=> $gifts
+            'children' => $childrenDone,
         ));
     }
 }
