@@ -13,8 +13,27 @@
                     Tonnerre, Éclair, Rudolphe! </br>
                 </h3>
 
-                <div class="panel-heading">
-                    Prochain arrêt :
+                    <div class="panel-body">
+                        {% for child in children %}
+                            {#{{ dump(child) }}#}
+                            <ul class="list-group">
+                                <li class="list-group-item">Tornade, Danseur, Furie, Fringant, Comète, Cupidon,
+                                    Tonnerre,
+                                    Éclair, Rudolphe! Cap vers
+                                    l'adorable {{ child.firstname| title }} {{ child.name|title }}, qui a été
+                                    bien sage cette année et qui
+                                    habite {{ child.address }} {{ child.zipcode }} {{ child.city|title }} {{ child.country|title }}
+                                    voyons où j'ai rangé
+                                    dans ma hotte!
+                                    <ol>
+                                    {% for gift in child.gifts %}
+                                        <li>{{ gift.name }}</li>
+                                    {% endfor %}
+                                    </ol>
+                                </li>
+                            </ul>
+                        {% endfor %}
+                    </div>
                 </div>
 
 
