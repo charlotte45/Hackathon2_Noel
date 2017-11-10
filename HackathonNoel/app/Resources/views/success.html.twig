@@ -1,8 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Merci {{ child.firstname }}, les elfes se mettent au travail !</h1>
+    <div class="container jumbotron">
+        <h1 class="papnoel thanks">Merci {{ child.firstname }}, les elfes se mettent au travail !</h1>
+        <div class="text-center">
+            <a href="/" class="btn btn-primary"><span class="glyphicon glyphicon-home"></span> Retour à la page
+                d'accueil</a>
+        </div>
 
-    <a href="/" class="btn btn-primary"><span class="glyphicon glyphicon-home"></span> Retour à la page d'accueil</a>
+    </div>
+
 
 {% endblock %}

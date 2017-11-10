@@ -1,4 +1,150 @@
-/* style.css */
+
+@import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore');
+
+body {
+    background: url("../images/OGA3VB0.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.jumbotron {
+
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.papnoel {
+    font-family: 'La Belle Aurore', cursive;
+}
+
+h1.thanks {
+    font-size: 3em;
+    text-align: center;
+}
+
+.section {
+    text-align: center;
+    height: 100%;
+    margin: 0 auto;
+    /*padding: 1em 0;*/
+}
+
+.toggle-button {
+    margin: 0 20px; }
+/* listGiftDone view */
+
+
+
+/*
+ * Toggle button styles
+ */
+.toggle-button {
+    position: relative;
+    display: inline-block;
+    color: #fff; }
+.toggle-button label {
+    display: inline-block;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: left; }
+.toggle-button input {
+    display: none; }
+.toggle-button__icon {
+    cursor: pointer;
+    pointer-events: none; }
+.toggle-button__icon:before, .toggle-button__icon:after {
+    content: "";
+    position: absolute;
+    top: 45%;
+    left: 35%;
+    transition: 0.2s ease-out; }
+
+/*
+ * Toggle button styles
+ */
+.toggle-button--tuuli label {
+    height: 50px;
+    line-height: 50px;
+    transition: all 0.2s;
+    border-radius: 2rem; }
+.toggle-button--tuuli label:before, .toggle-button--tuuli label:after {
+    position: absolute;
+    right: 1rem;
+    transition: all 0.2s .1s ease-out; }
+
+.toggle-button--tuuli input[type=checkbox] + label {
+    width: 50px;
+    background: #FF5335; }
+.toggle-button--tuuli input[type=checkbox] + label:before {
+    opacity: 0;
+    transform: translate(0, 20px); }
+.toggle-button--tuuli input[type=checkbox] + label:after {
+    opacity: 1;
+    transform: translate(0, 0); }
+
+.toggle-button--tuuli input[type=checkbox]:checked ~ label {
+    width: 50px;
+    background: #61B136; }
+
+.toggle-button--tuuli input[type=checkbox]:checked ~ .toggle-button__icon:before {
+    transform: translate(-30%, 100%) rotate(45deg) scale(0.6, 1); }
+
+.toggle-button--tuuli input[type=checkbox]:checked ~ .toggle-button__icon:after {
+    transform: translate(20%) rotate(-45deg); }
+
+.toggle-button--tuuli .toggle-button__icon {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 0;
+    left: 0; }
+.toggle-button--tuuli .toggle-button__icon:before, .toggle-button--tuuli .toggle-button__icon:after {
+    width: 25px;
+    height: 3px;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    margin-left: -10%;
+    top: 48%; }
+.toggle-button--tuuli .toggle-button__icon:before {
+    transform: rotate(45deg); }
+.toggle-button--tuuli .toggle-button__icon:after {
+    transform: rotate(-45deg); }
+
+@keyframes iconShowBefore {
+    0% {
+        transform: translate(0, 0) rotate(45deg) scale(0, 1); }
+    100% {
+        transform: translate(0, 0) rotate(45deg) scale(0.6, 1); } }
+
+@keyframes iconShowAfter {
+    0% {
+        opacity: 0; }
+    49% {
+        opacity: 0; }
+    50% {
+        opacity: 1;
+        transform: translate(4px, 6px) rotate(-45deg) scale(0, 1); }
+    100% {
+        transform: translate(4px, 6px) rotate(-45deg) scale(1, 1); } }
+
+@keyframes iconHoverBefore {
+    0% {
+        transform: rotate(45deg) scale(1, 1); }
+    100% {
+        transform: rotate(45deg) scale(1.2, 1.2); } }
+
+@keyframes iconHoverAfter {
+    0% {
+        transform: rotate(-45deg) scale(1, 1); }
+    50% {
+        transform: rotate(-45deg) scale(1.2, 1.2); } }
+
+.done {
+    color: green;
+}
+
+.undone {
+    color: red;
+}
 
 /* listGiftDone view */
 

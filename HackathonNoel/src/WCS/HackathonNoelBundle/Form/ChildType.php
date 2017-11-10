@@ -16,22 +16,22 @@ class ChildType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name',       TextType::class, array(
-                    'label' => "Ton Nom",
+                    'label' => "Mon Nom",
                 ))
                 ->add('firstname',  TextType::class, array(
-                    'label' => 'Ton Prénom',
+                    'label' => 'Mon Prénom',
                 ))
                 ->add('address',    TextType::class, array(
-                    'label' => 'Ton Adresse',
+                    'label' => 'Mon Adresse',
                 ))
                 ->add('zipcode',    TextType::class, array(
                     'label' => 'Code postal',
                 ))
                 ->add('city',       TextType::class, array(
-                    'label' => 'Ta Ville',
+                    'label' => 'Ma Ville',
                 ))
                 ->add('country',    TextType::class, array(
-                    'label' => 'Ton Pays',
+                    'label' => 'Mon Pays',
                 ));
     }
     
