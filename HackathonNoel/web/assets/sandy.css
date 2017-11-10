@@ -11,19 +11,25 @@ body {
     background-size: cover;
 }
 
-.sandyClawsJumb {
-    background-color: #6391D5;
-    opacity: 0.8;
+.slogan {
+    font-size: 1.5em;
+}
 
+.sandyClawsJumb {
+    background: rgba(255, 255, 255, 0.5);
     margin-top: 5%;
     position: relative;
 }
+.list-group-item {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.panel-default>.panel-heading {
+    background: rgba(255, 255, 255, 0.8);
+}
 
 .sandyjumtext {
-    background-color: #6391D5;
-    opacity: 0.8;
-    height: 100px;
-    color: white;
+    color: darkgray;
     font-size: calc(2vw + 10px);
     font-family: 'Kaushan Script', cursive;
 }
@@ -36,7 +42,6 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
     left: 50%;
-
 }
 
 .sandyJumbCorpse
@@ -60,4 +65,6 @@ body {
 #map {
     height: 400px;
     width: 100%;
+    border-radius: 15px;
 }
+

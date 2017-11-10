@@ -13,8 +13,8 @@
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
             <div class="jumbotron text-center sandyClawsJumb">
-                <h1 class="sandyjumtext">La magie de Noël n'attend pas!! </h1><br>
-                    <small> (alors on se move le body les rennes, je paye pas votre avoine 364 jours pour rien!)</small></h2>
+                <h1 class="sandyjumtext">La magie de Noël n'attend pas!! </h1>
+                <h2 class="slogan">Alors on se move le body les rennes, je paye pas votre avoine 364 jours pour rien!</h2>
             </div>
         </div>
     </div>
@@ -35,11 +35,7 @@
                         {#{{ dump(child) }}#}
                         <ul class="list-group">
                             <li class="list-group-item"> Cap vers
-                                l'adorable <strong>{{ child.firstname| title}} {{ child.name|title }} </strong>, qui a été
-                                bien sage cette année et qui
-                                habite <strong>{{ child.address }} {{ child.zipcode }} {{ child.city|title }} {{ child.country|title }}</strong>
-                                voyons où j'ai rangé
-                                dans ma hotte!
+                                l'adorable <strong>{{ child.firstname| title}} {{ child.name|title }} </strong>, au <strong>{{ child.address }} {{ child.zipcode }} {{ child.city|title }} {{ child.country|title }}</strong>
                             </li>
                         </ul>
                     {% endfor %}
