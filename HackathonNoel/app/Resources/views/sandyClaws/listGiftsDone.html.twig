@@ -1,22 +1,33 @@
 {% extends 'base.html.twig' %}
 
+
+    {% block stylesheets %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../assets/sandy.css">
+        <link rel="stylesheet" href="../../assets/timeto/timeTo.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    {% endblock %}
+
 {% block body %}
-    <div class="jumbotron text-center">
-        <h1>La magie de Noël n'attend pas!!</h1>
-        <p>(alors on se move le body les rennes, je paye pas votre avoine 364 jours pour rien!)</p>
-    </div>
     <div class="row">
-    <div class="col-xs-10 col-xs-offset-1">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">En route Tornade, Danseur, Furie, Fringant, Comète, Cupidon,
-                    Tonnerre, Éclair, Rudolphe! </br>
-                </h3>
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="jumbotron text-center sandyClawsJumb">
+                <h1 class="sandyjumtext">La magie de Noël n'attend pas!! </h1><br>
+                    <small> (alors on se move le body les rennes, je paye pas votre avoine 364 jours pour rien!)</small></h2>
+            </div>
+        </div>
+    </div>
 
-                <div class="panel-heading">
-                    Prochain arrêt :
+    <div class="row ">
+        <div class="col-xs-6 col-xs-offset-3">
+            <div class="panel panel-default sandyJumbCorpse">
+                <div class="panel-heading sandyPanelHeading">
+                    <h3 class="panel-title">En route Tornade, Danseur, Furie, Fringant, Comète, Cupidon,
+                        Tonnerre, Éclair, Rudolphe!
+                    </h3>
+                    <p class="jumbPSandy"> Prochain arrêt :</p>
                 </div>
-
 
                 <div class="panel-body">
 
@@ -24,9 +35,9 @@
                         {#{{ dump(child) }}#}
                         <ul class="list-group">
                             <li class="list-group-item"> Cap vers
-                                l'adorable {{ child.firstname| title }} {{ child.name|title }}, qui a été
+                                l'adorable <strong>{{ child.firstname| title}} {{ child.name|title }} </strong>, qui a été
                                 bien sage cette année et qui
-                                habite {{ child.address }} {{ child.zipcode }} {{ child.city|title }} {{ child.country|title }}
+                                habite <strong>{{ child.address }} {{ child.zipcode }} {{ child.city|title }} {{ child.country|title }}</strong>
                                 voyons où j'ai rangé
                                 dans ma hotte!
                             </li>
