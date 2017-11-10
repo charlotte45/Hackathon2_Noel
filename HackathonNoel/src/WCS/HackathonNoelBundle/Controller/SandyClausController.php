@@ -9,14 +9,20 @@
 namespace WCS\HackathonNoelBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\Routing\Annotation\Route;
+use WCS\HackathonNoelBundle\Entity\Child;
 
-
+/**
+ * Class SandyClausController
+ * @package WCS\HackathonNoelBundle\Controller
+ * @Route("sandyclaws")
+ */
 class SandyClausController extends Controller
 {
 
     /**
-     * @Route("/sandyclaws",name="sandyclaws")
+     * @Route("/",name="sandyclaws")
      */
     public function childAndGiftsDoneAction()
     {
@@ -41,7 +47,7 @@ class SandyClausController extends Controller
         }
 
         // Traitement des coord
-        $destination = array('northpole'=>['lat' => 90, 'lng' => 0]);
+        $destination = array('northpole' => ['lat' => 90, 'lng' => 0]);
         $nb_stay = 0;
         foreach ($stay as $child) {
             $nb_stay += ($child->visited) ? 0 : 1;
@@ -52,14 +58,14 @@ class SandyClausController extends Controller
             $key = key($stay);
             $first = $stay[$key];
 
-            if (count($destination)==1) {
+            if (count($destination) == 1) {
                 $a = $destination['northpole'];
             } else {
-                $obj = $destination[count($destination)-2];
-                $a = ['lat'=>$obj->getLatitude(), 'lng'=>$obj->getLongitude()];
+                $obj = $destination[count($destination) - 2];
+                $a = ['lat' => $obj->getLatitude(), 'lng' => $obj->getLongitude()];
             }
 
-            $first = ['lat'=>$first->getLatitude(), 'lng'=>$first->getLongitude()];
+            $first = ['lat' => $first->getLatitude(), 'lng' => $first->getLongitude()];
             $min = $this->distOrtho($a, $first);
             $indMin = count($destination) - 1;
 
@@ -67,7 +73,7 @@ class SandyClausController extends Controller
                 if ($currentStay->visited) {
                     continue;
                 }
-                $b = ['lat'=>$currentStay->getLatitude(), 'lng'=>$currentStay->getLongitude()];
+                $b = ['lat' => $currentStay->getLatitude(), 'lng' => $currentStay->getLongitude()];
                 $dist = $this->distOrtho($a, $b);
                 if ($dist < $min) {
                     $min = $dist;
@@ -82,6 +88,25 @@ class SandyClausController extends Controller
         return $this->render('sandyClaws/listGiftsDone.html.twig', array(
             'children' => $childrenDone,
         ));
+    }
+
+    /**
+     * Deletes a child entity.
+     *
+     * @Route("/suppr/{id}", name="childsuppr")
+     * @Method("GET")
+     */
+    public function deleteAction(Child $child)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $child = $em->getRepository('WCSHackathonNoelBundle:Child')->find($child);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($child);
+        $em->flush();
+
+        return $this->redirectToRoute('sandyclaws');
     }
 
     public function distOrtho($a, $b, $precision = 3, $r = 6378.14)

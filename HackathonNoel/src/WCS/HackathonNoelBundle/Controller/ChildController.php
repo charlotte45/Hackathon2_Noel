@@ -117,7 +117,7 @@ class ChildController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('child_index');
+        return $this->redirectToRoute('sandyclaws');
     }
 
     /**

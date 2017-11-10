@@ -10,17 +10,18 @@
     {% endblock %}
 
 {% block body %}
+    <div class="container">
     <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
+        {#<div class="col-sm-6 col-sm-offset-3">#}
             <div class="jumbotron text-center sandyClawsJumb">
-                <h1 class="sandyjumtext">La magie de Noël n'attend pas!! </h1><br>
-                    <small> (alors on se move le body les rennes, je paye pas votre avoine 364 jours pour rien!)</small></h2>
+                <h1 class="sandyjumtext">La magie de Noël n'attend pas!! </h1>
+                <h2 class="slogan">Alors on se move le body les rennes, je paye pas votre avoine 364 jours pour rien!</h2>
             </div>
-        </div>
+        {#</div>#}
     </div>
 
     <div class="row ">
-        <div class="col-xs-6 col-xs-offset-3">
+        {#<div class="col-xs-6 col-xs-offset-3">#}
             <div class="panel panel-default sandyJumbCorpse">
                 <div class="panel-heading sandyPanelHeading">
                     <h3 class="panel-title">En route Tornade, Danseur, Furie, Fringant, Comète, Cupidon,
@@ -35,20 +36,19 @@
                         {#{{ dump(child) }}#}
                         <ul class="list-group">
                             <li class="list-group-item"> Cap vers
-                                l'adorable <strong>{{ child.firstname| title}} {{ child.name|title }} </strong>, qui a été
-                                bien sage cette année et qui
-                                habite <strong>{{ child.address }} {{ child.zipcode }} {{ child.city|title }} {{ child.country|title }}</strong>
-                                voyons où j'ai rangé
-                                dans ma hotte!
+                                l'adorable <strong>{{ child.firstname| title}} {{ child.name|title }} </strong>, au <strong>{{ child.address }} {{ child.zipcode }} {{ child.city|title }} {{ child.country|title }}</strong>
+                                <a href="{{ path('childsuppr', {'id':child.id}) }}" class="btn btn-danger"><span class="glyphicon glyphicon-check"></span> Livraison effectuée !</a>
                             </li>
                         </ul>
                     {% endfor %}
                 </div>
-            </div>
+            {#</div>#}
         </div>
     </div>
 
-    <div id="map"></div>
+
+        <div id="map"></div>
+    </div>
 
 {% endblock %}
 
@@ -59,15 +59,29 @@
     <script src="../../assets/countDown.js"></script>
     <script>
         function initMap() {
-            var uluru = {lat: -25.363, lng: 131.044};
+            var children = document.querySelectorAll('.child-list');
+
+            var pole = {lat: 85, lng: -12};
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 4,
-                center: uluru
+                center: pole
             });
             var marker = new google.maps.Marker({
-                position: uluru,
+                position: pole,
                 map: map
             });
+
+            for(var i=0; i<children.length ;i++) {
+                var child = children[i];
+                var child_lat = parseFloat(child.dataset.lat);
+                var child_lng = parseFloat(child.dataset.lng);
+                var childpos = {lat: child_lat, lng: child_lng};
+                var marker = new google.maps.Marker({
+                    position: childpos,
+                    map: map
+                });
+            }
+
         }
     </script>
 
