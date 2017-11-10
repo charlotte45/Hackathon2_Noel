@@ -1,13 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <div class="container">
-        <header>
-            <hr/>
-            <p class="text-center">{% if gifts|length > 0 %}Vite, vite, vite ! Il vous reste encore {{ gifts|length }} jouet{% if gifts|length > 1 %}s{% endif %} à fabriquer !{% else %} Toutes les commandes sont prêtes ! <br/> Les rennes vont bientôt pouvoir décoller...{% endif %}</p>
-            <hr/>
+{% block stylesheets %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/elves.css">
+    <link rel="stylesheet" href="../../assets/timeto/timeTo.css">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+{% endblock %}
 
-        </header>
+{% block body %}
+
+    <div class="container-fluid elves">
+    {% if gifts|length == 0 %}
+        <section class="jumbotron">
+            <p class="text-center message">Toutes les commandes sont prêtes !
+                    <br/> Les rennes vont bientôt pouvoir décoller...</p>
+        </section>
+    {% else %}
+        <section class="jumbotron1">
+        <p class="text-center message">{% if gifts|length > 0 %}Vite, vite, vite ! Il vous reste encore {{ gifts|length }} jouet{% elseif gifts|length > 1 %}s{% endif %} à fabriquer !</p>
+        </section>
+        {% endif %}
         <div class="row">
             {% for child in children %}
                 <div class="col-xs-4">
