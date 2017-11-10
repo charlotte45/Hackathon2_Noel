@@ -4,7 +4,7 @@ $(document).ready(function(){
         displayDays: 2,
         theme: "black",
         displayCaptions: true,
-        fontSize: 48,
+        fontSize: 36,
         captionSize: 14,
         lang:'fr'
     });
