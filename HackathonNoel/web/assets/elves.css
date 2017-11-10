@@ -1,0 +1,25 @@
+.done {
+    color: green;
+}
+
+.undone {
+    color: red;
+}
+
+body {
+    background: url("../images/bois.jpg") no-repeat center bottom fixed;
+    background-size: cover;
+}
+
+.elves .jumbotron {
+    background-color: #3f0000;
+    opacity: 0.8;
+    height: 300px;
+    margin-top: 5%;
+}
+
+.elves .message {
+    color: white;
+    font-size: calc(2vw + 10px);
+    font-family: 'Kaushan Script', cursive;
+}
