@@ -14,7 +14,8 @@
         <div class="col-sm-6 col-sm-offset-3">
             <div class="jumbotron text-center sandyClawsJumb">
                 <h1 class="sandyjumtext">La magie de Noël n'attend pas!! </h1><br>
-                    <small> (alors on se move le body les rennes, je paye pas votre avoine 364 jours pour rien!)</small></h2>
+                <small> (alors on se move le body les rennes, je paye pas votre avoine 364 jours pour rien!)</small>
+                </h2>
             </div>
         </div>
     </div>
@@ -34,12 +35,16 @@
                     {% for child in children %}
                         {#{{ dump(child) }}#}
                         <ul class="list-group">
-                            <li class="list-group-item"> Cap vers
-                                l'adorable <strong>{{ child.firstname| title}} {{ child.name|title }} </strong>, qui a été
+                            <li class="child-list" id="child{{ child.id }}" data-lat="{{ child.Latitude }}" data-lng="{{ child.Longitude }}" class="list-group-item"> Cap vers
+                                l'adorable <strong>{{ child.firstname| title }} {{ child.name|title }} </strong>, qui a
+                                été
                                 bien sage cette année et qui
-                                habite <strong>{{ child.address }} {{ child.zipcode }} {{ child.city|title }} {{ child.country|title }}</strong>
+                                habite
+                                <strong>{{ child.address }} {{ child.zipcode }} {{ child.city|title }} {{ child.country|title }}</strong>
                                 voyons où j'ai rangé
                                 dans ma hotte!
+
+                                <div></div>
                             </li>
                         </ul>
                     {% endfor %}
@@ -48,7 +53,9 @@
         </div>
     </div>
 
-    <div id="map"></div>
+    <div class="container">
+        <div id="map"></div>
+    </div>
 
 {% endblock %}
 
@@ -59,15 +66,29 @@
     <script src="../../assets/countDown.js"></script>
     <script>
         function initMap() {
-            var uluru = {lat: -25.363, lng: 131.044};
+            var children = document.querySelectorAll('.child-list');
+
+            var pole = {lat: 85, lng: -12};
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 4,
-                center: uluru
+                center: pole
             });
             var marker = new google.maps.Marker({
-                position: uluru,
+                position: pole,
                 map: map
             });
+
+            for(var i=0; i<children.length ;i++) {
+                var child = children[i];
+                var child_lat = parseFloat(child.dataset.lat);
+                var child_lng = parseFloat(child.dataset.lng);
+                var childpos = {lat: child_lat, lng: child_lng};
+                var marker = new google.maps.Marker({
+                    position: childpos,
+                    map: map
+                });
+            }
+
         }
     </script>
 
