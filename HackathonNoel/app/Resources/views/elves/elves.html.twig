@@ -5,7 +5,7 @@
         <header>
             <p>COMPTEUR</p>
             <hr/>
-            <p class="text-center">Vite, vite, vite ! Il vous reste encore {{ gifts|length }} jouets à fabriquer !</p>
+            <p class="text-center">{% if gifts|length > 0 %}Vite, vite, vite ! Il vous reste encore {{ gifts|length }} jouet{% if gifts|length > 1 %}s{% endif %} à fabriquer !{% else %} Toutes les commandes sont prêtes ! <br/> Les rennes vont bientôt pouvoir décoller...{% endif %}</p>
             <hr/>
 
         </header>
@@ -39,7 +39,6 @@
                                             </a>
                                         </div>
                                     </div>
-
                                 {% endfor %}
                             </div>
                         </div>
