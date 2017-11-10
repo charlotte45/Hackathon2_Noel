@@ -61,7 +61,7 @@ class elvesController extends Controller
     /**
      * @param Gift $gift
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     * @Route("/done" name="done")
+     * @Route("/done", name="done")
      */
     public function doneAction(Gift $gift)
     {
