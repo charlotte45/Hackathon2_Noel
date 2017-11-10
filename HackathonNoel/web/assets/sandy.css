@@ -1,0 +1,63 @@
+.done {
+    color: green;
+}
+
+.undone {
+    color: red;
+}
+
+body {
+    background: url("../images/4124754-christmas-wallpaper-for-dual-monitor.jpg") no-repeat center bottom fixed;
+    background-size: cover;
+}
+
+.sandyClawsJumb {
+    background-color: #6391D5;
+    opacity: 0.8;
+
+    margin-top: 5%;
+    position: relative;
+}
+
+.sandyjumtext {
+    background-color: #6391D5;
+    opacity: 0.8;
+    height: 100px;
+    color: white;
+    font-size: calc(2vw + 10px);
+    font-family: 'Kaushan Script', cursive;
+}
+
+.jumbsandytext {
+    color: white;
+    font-size: calc(2vw + 10px);
+    font-family: 'Kaushan Script', cursive;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+
+}
+
+.sandyJumbCorpse
+{
+    background-color: #1C385F;
+    opacity: 0.8;
+    margin-top: 5%;
+    position: relative;
+}
+
+.jumbPSandy {
+    margin-top: 10px;
+    font-weight: bold ;
+
+}
+
+.sandyPanelHeading {
+    background-color: #2E507E;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
