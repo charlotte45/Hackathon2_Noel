@@ -68,3 +68,12 @@ body {
     border-radius: 15px;
 }
 
+@media all and (max-device-width: 480px)
+
+{
+
+    .slogan {
+        display: none;
+    }
+
+}
