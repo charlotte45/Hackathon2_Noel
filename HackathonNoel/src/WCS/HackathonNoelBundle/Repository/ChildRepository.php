@@ -10,4 +10,5 @@ namespace WCS\HackathonNoelBundle\Repository;
  */
 class ChildRepository extends \Doctrine\ORM\EntityRepository
 {
+
 }

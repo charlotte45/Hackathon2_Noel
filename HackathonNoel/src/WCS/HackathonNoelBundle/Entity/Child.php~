@@ -285,5 +285,45 @@ class Child
     {
         return $this->latitude;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->gifts = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add gift
+     *
+     * @param \WCS\HackathonNoelBundle\Entity\Gift $gift
+     *
+     * @return Child
+     */
+    public function addGift(\WCS\HackathonNoelBundle\Entity\Gift $gift)
+    {
+        $this->gifts[] = $gift;
+
+        return $this;
+    }
+
+    /**
+     * Remove gift
+     *
+     * @param \WCS\HackathonNoelBundle\Entity\Gift $gift
+     */
+    public function removeGift(\WCS\HackathonNoelBundle\Entity\Gift $gift)
+    {
+        $this->gifts->removeElement($gift);
+    }
+
+    /**
+     * Get gifts
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGifts()
+    {
+        return $this->gifts;
+    }
+}
