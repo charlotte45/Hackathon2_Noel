@@ -1,34 +1,39 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-        <div class="jumbotron text-center">
-            <h1>La magie de Noël n'attend pas!!</h1>
-            <p>(alors on se move le body les rennes, je paye pas votre avoine 364 jours pour rien!)</p>
-        </div>
-        <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Prochain arrêt : </h3>
-                    </div>
+    <div class="jumbotron text-center">
+        <h1>La magie de Noël n'attend pas!!</h1>
+        <p>(alors on se move le body les rennes, je paye pas votre avoine 364 jours pour rien!)</p>
+    </div>
+    <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">En route Tornade, Danseur, Furie, Fringant, Comète, Cupidon,
+                    Tonnerre, Éclair, Rudolphe! </br>
+                </h3>
 
-                    <div class="panel-body">
-                        {% for child in children %}
-                            {#{{ dump(child) }}#}
-                            <ul class="list-group">
-                                <li class="list-group-item">Tornade, Danseur, Furie, Fringant, Comète, Cupidon,
-                                    Tonnerre,
-                                    Éclair, Rudolphe! Cap vers
-                                    l'adorable {{ child.firstname| title }} {{ child.name|title }}, qui a été
-                                    bien sage cette année et qui
-                                    habite {{ child.address }} {{ child.zipcode }} {{ child.city|title }} {{ child.country|title }}
-                                    voyons où j'ai rangé
-                                    dans ma hotte!
-                                </li>
-                            </ul>
-                        {% endfor %}
-                    </div>
+                <div class="panel-heading">
+                    Prochain arrêt :
+                </div>
+
+
+                <div class="panel-body">
+
+                    {% for child in children %}
+                        {#{{ dump(child) }}#}
+                        <ul class="list-group">
+                            <li class="list-group-item"> Cap vers
+                                l'adorable {{ child.firstname| title }} {{ child.name|title }}, qui a été
+                                bien sage cette année et qui
+                                habite {{ child.address }} {{ child.zipcode }} {{ child.city|title }} {{ child.country|title }}
+                                voyons où j'ai rangé
+                                dans ma hotte!
+                            </li>
+                        </ul>
+                    {% endfor %}
                 </div>
             </div>
         </div>
+    </div>
 {% endblock %}
