@@ -1,7 +1,8 @@
 {% extends 'base.html.twig' %}
-
+{%  form_theme form 'bootstrap_3_layout.html.twig' %}
 {% block body %}
-    <h1>Mon adresse pour le Père Noël</h1>
+    <div class="container jumbotron">
+        <h1 class="text-center papnoel">Cher Papa Noël...</h1>
 
     {% if errors %}
         <div class="alert alert-danger">
@@ -12,13 +13,15 @@
     {% endif %}
 
     {{ form_start(form) }}
-    {{ form_widget(form) }}
+    {{ form_widget(form)}}
 
-    <div>
-        <button type="submit"><span class="glyphicon glyphicon-gift"></span> Confirmer mon adresse et choisir mes
+    <div class="text-center">
+        <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-gift"></span> Confirmer mon adresse et choisir mes
             cadeaux
         </button>
     </div>
     {{ form_end(form) }}
+</div>
+
 
 {% endblock %}
