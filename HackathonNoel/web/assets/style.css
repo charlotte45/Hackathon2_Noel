@@ -6,8 +6,13 @@ body {
 }
 
 .jumbotron {
-
     background: rgba(255, 255, 255, 0.8);
+}
+
+.jumbotron li {
+    font-family: 'Kaushan Script', cursive;
+    font-size: calc(0.5vw + 10px);
+    margin-bottom: 10px;
 }
 
 .papnoel {
@@ -30,7 +35,15 @@ h1.thanks {
     margin: 0 20px; }
 /* listGiftDone view */
 
+.papnoel button, input, select, textarea {
+    width: 600px;
+    margin-left: 10px;
+    margin-bottom : 20px;
+}
 
+.papnoel {
+    margin-bottom: 30px;
+}
 
 /*
  * Toggle button styles

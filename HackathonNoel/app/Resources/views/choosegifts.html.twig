@@ -2,11 +2,11 @@
 
 {% block body %}
     <div class="container jumbotron">
-        <h1 class="text-center papnoel thanks">La liste de {{ child.firstname }} pour le père noël</h1>
+        <h1 class="text-center papnoel thanks">La liste de {{ child.firstname }} pour le Père Noël</h1>
 
         <ol>
             {% for gift in child.gifts %}
-                <li>{{ gift.name }}</li>
+                <li class="listeJouet text-center">{{ gift.name }}</li>
             {% endfor %}
         </ol>
 
@@ -15,22 +15,22 @@
 
         <div>
             {% if (child.gifts|length < 5) %}
-                <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-plus"></span> Encore!
+                <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-plus"></span> Encore !
                 </button>
             {% else %}
                 <button class="btn btn-danger" disabled>
-                    <span class="glyphicon glyphicon-remove"></span> Tu ne peux pas ajouter plus de cinq cadeaux (sinon demande à tes parents !)
+                    <span class="glyphicon glyphicon-remove"></span> Un sixième ?! Cinq c'est déjà pas mal !
                 </button>
             {% endif %}
 
             {% if (child.gifts|length < 1) %}
                 <p class="btn btn-success" disabled>
-                    <span class="glyphicon glyphicon-gift"></span> Envoyer ma liste de cadeaux au père Noël"
+                    <span class="glyphicon glyphicon-gift"></span> Envoyer ma liste de cadeaux au Père Noël"
                 </p>
             {% else %}
                 <a href="{{ path('success', {'id':child.id}) }}"
                    class="btn btn-success">
-                    <span class="glyphicon glyphicon-gift"></span> Envoyer ma liste de cadeaux au père Noël"
+                    <span class="glyphicon glyphicon-gift"></span> Envoyer ma liste de cadeaux au Père Noël"
                 </a>
             {% endif %}
 
