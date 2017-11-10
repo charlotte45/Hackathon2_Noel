@@ -14,7 +14,7 @@ class Child
 {
     /**
      * @var
-     * @ORM\OneToMany(targetEntity="Gift", mappedBy="child")
+     * @ORM\OneToMany(targetEntity="Gift", mappedBy="child", cascade={"remove"})
      */
     private $gifts;
 
