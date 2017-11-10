@@ -145,3 +145,9 @@ h1.thanks {
 .undone {
     color: red;
 }
+
+/* listGiftDone view */
+
+.santaView {
+    background-image: url("../images/Christmas-Background.png");
+}

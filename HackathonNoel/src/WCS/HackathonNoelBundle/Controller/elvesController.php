@@ -34,7 +34,15 @@ class elvesController extends Controller
             ->getManager()
             ->getRepository(Child::class);
 
-        $listChildren = $repository->findAll();
+        $listChildren = [];
+        $children = $repository->findAll();
+        foreach ($children as $child) {
+            foreach ($child->getGifts() as $gift) {
+                if(!$gift->getDone()) {
+                    $listChildren[$child->getId()] = $child;
+                }
+            }
+        }
 
         $repository = $this
             ->getDoctrine()
