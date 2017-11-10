@@ -11,13 +11,16 @@
 {% block body %}
 
     <div class="container-fluid elves">
-
-        <header class="jumbotron">
-
-            <p class="text-center message">{% if gifts|length > 0 %}Vite, vite, vite ! Il vous reste encore {{ gifts|length }} jouet{% if gifts|length > 1 %}s{% endif %} à fabriquer !{% else %} Toutes les commandes sont prêtes !
-                    <br/> Les rennes vont bientôt pouvoir décoller...{% endif %}</p>
-        </header>
-
+    {% if gifts|length == 0 %}
+        <section class="jumbotron">
+            <p class="text-center message">Toutes les commandes sont prêtes !
+                    <br/> Les rennes vont bientôt pouvoir décoller...</p>
+        </section>
+    {% else %}
+        <section class="jumbotron1">
+        <p class="text-center message">{% if gifts|length > 0 %}Vite, vite, vite ! Il vous reste encore {{ gifts|length }} jouet{% elseif gifts|length > 1 %}s{% endif %} à fabriquer !</p>
+        </section>
+        {% endif %}
         <div class="row">
             {% for child in children %}
                 <div class="col-xs-4">
