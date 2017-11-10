@@ -85,6 +85,8 @@ class SandyClausController extends Controller
             $nb_stay--;
         }
 
+        unset($destination['northpole']);
+
         return $this->render('sandyClaws/listGiftsDone.html.twig', array(
             'children' => $childrenDone,
         ));
