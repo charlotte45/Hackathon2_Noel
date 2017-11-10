@@ -1,3 +1,25 @@
+
+@import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore');
+
+body {
+    background: url("../images/OGA3VB0.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.jumbotron {
+
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.papnoel {
+    font-family: 'La Belle Aurore', cursive;
+}
+
+h1.thanks {
+    font-size: 3em;
+    text-align: center;
+}
+
 .section {
     text-align: center;
     height: 100%;
@@ -8,6 +30,8 @@
 .toggle-button {
     margin: 0 20px; }
 /* listGiftDone view */
+
+
 
 /*
  * Toggle button styles
@@ -120,7 +144,4 @@
 
 .undone {
     color: red;
-}
-.santaView {
-    background-image: url("../images/Christmas-Background.png");
 }
