@@ -66,9 +66,11 @@
                 zoom: 4,
                 center: pole
             });
+            var iconBase = '../assets/';
             var marker = new google.maps.Marker({
                 position: pole,
-                map: map
+                map: map,
+                icon: iconBase + 'xmas.png'
             });
 
             for(var i=0; i<children.length ;i++) {
@@ -78,7 +80,8 @@
                 var childpos = {lat: child_lat, lng: child_lng};
                 var marker = new google.maps.Marker({
                     position: childpos,
-                    map: map
+                    map: map,
+                    icon: iconBase + 'xmas.png'
                 });
             }
 
