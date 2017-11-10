@@ -14,8 +14,8 @@
     <div class="row">
         {#<div class="col-sm-6 col-sm-offset-3">#}
             <div class="jumbotron text-center sandyClawsJumb">
-                <h1 class="sandyjumtext">La magie de Noël n'attend pas!! </h1>
-                <h2 class="slogan">Alors on se move le body les rennes, je paye pas votre avoine 364 jours pour rien!</h2>
+                <h1 class="sandyjumtext">La magie de Noël n'attend pas !! </h1>
+                <h2 class="slogan">Alors on se move le body les rennes, je paye pas votre avoine 364 jours pour rien !</h2>
             </div>
         {#</div>#}
     </div>
@@ -35,7 +35,7 @@
                     {% for child in children %}
                         {#{{ dump(child) }}#}
                         <ul class="list-group">
-                            <li class="list-group-item"> Cap vers
+                            <li data-lat="{{ child.Latitude }}" data-lng="{{ child.Longitude }}" class="child-list list-group-item"> Cap vers
                                 l'adorable <strong>{{ child.firstname| title}} {{ child.name|title }} </strong>, au <strong>{{ child.address }} {{ child.zipcode }} {{ child.city|title }} {{ child.country|title }}</strong>
                                 <a href="{{ path('childsuppr', {'id':child.id}) }}" class="btn btn-danger"><span class="glyphicon glyphicon-check"></span> Livraison effectuée !</a>
                             </li>
