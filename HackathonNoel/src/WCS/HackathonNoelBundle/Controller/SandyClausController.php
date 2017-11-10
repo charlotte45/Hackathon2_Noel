@@ -78,7 +78,7 @@ class SandyClausController extends Controller
             $destination[] = $stay[$indMin];
             $nb_stay--;
         }
-        var_dump(count($destination));
+
         return $this->render('sandyClaws/listGiftsDone.html.twig', array(
             'children' => $childrenDone,
         ));

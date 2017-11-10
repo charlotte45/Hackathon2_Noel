@@ -47,4 +47,32 @@
             </div>
         </div>
     </div>
+
+    <div id="map"></div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../assets/timeto/jquery.time-to.js"></script>
+    <script src="../../assets/countDown.js"></script>
+    <script>
+        function initMap() {
+            var uluru = {lat: -25.363, lng: 131.044};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG4s2abvYvMRk93rr-ZyTkN7kNSrEhW9E&callback=initMap">
+    </script>
+
 {% endblock %}

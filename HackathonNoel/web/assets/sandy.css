@@ -56,3 +56,8 @@ body {
 .sandyPanelHeading {
     background-color: #2E507E;
 }
+
+#map {
+    height: 400px;
+    width: 100%;
+}
